@@ -12,9 +12,9 @@
                         Email:
                         <input type="email" id="email" name="email" placeholder="enter your email" required>
                     </label>
-                    <br>
-            </div>
+                <br>
             <div>
+            </div>
                     <label for="password">
                         Password:
                         <input type="password" id="password" name="password" placeholder="enter your password" required>
@@ -31,24 +31,43 @@
             <div>
                     <button submit="login">enter the matrix</button>
             </div>
+                    <br>
+            <div>
+                <label for="Bio">
+                    Bio:
+                    <br>
+                <textarea name="comment" id="bio" placeholder="Enter Bio"></textarea>
+                </label>
+            </div>
+            <br>
         </form>
+         <fieldset >
+             <h1>How did you hear about us??</h1>
 
-        <h1>How did you hear about us??</h1>
-            <form>
-                <label for="youtube">
-                    Youtube
-                    <input type="radio" id="youtube" name="source">
-                </label>
+                <form>
+                    <label for="youtube">
+                        Youtube
+                        <input type="radio" id="youtube" name="source">
+                    </label>
+                    <label for="billboard">
+                        Billboard
+                        <input type="radio" id="billboard" name="source">
+                    </label>
+                    <label for="friend">
+                        Friend
+                        <input type="radio" id="friend" name="source">
+                    </label>
+                </form>
+         </fieldset>
 
-                <label for="billboard">
-                    Billboard
-                    <input type="radio" id="billboard" name="source">
-                </label>
+        <div>
+            <label for="browser">What browser are you using</label>
+                <select id="browser" name="browser">
+                    <option value="chrome">chrome</option>
+                    <option value="firefox">firefox</option>
+                    <option value="safari">safari</option>
+                </select>
+        </div>
 
-                <label for="friend">
-                    Friend
-                    <input type="radio" id="friend" name="source" >
-                </label>
-            </form>
-   </body>
+    </body>
 </html>
