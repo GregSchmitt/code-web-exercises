@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Germania+One');
+
+.fancy_header {
+    text-align: center;
+    color: fuchsia;
+    text-decoration: underline;
+
+}
+
+body {
+    background-color: saddlebrown;
+    background-image: url("../img/woodgrain.jpg");
+    background-size: contain;
+    background-repeat: repeat-y;
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+a:hover {
+    color: springgreen;
+    font-size: 2em;
+}
+
+a:visited {
+    color: red;
+}
+
+a:active {
+    color: aqua;
+}
+
+ul, ol {
+    list-style: none;
+    color: aqua;
+}
+
+li::before {
+    content: "<><><>";
+    color: gold;
+}
+
+body {
+    font-family: 'Germania one';
+}
