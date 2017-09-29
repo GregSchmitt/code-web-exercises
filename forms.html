@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Register With Us</title>
-    </head>
-        <body>
-            <h1>login page</h1>
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+    <body>
+        <h1>Login page</h1>
             <div>
-                    <form action="https://requestb.in/zxz76azx" method="POST">
+                <form action="https://requestb.in/zxz76azx" method="POST">
                     <label for="email">
-                    Email:
-                    <input type="text" id="email" name="email" placeholder="enter your email">
+                        Email:
+                        <input type="email" id="email" name="email" placeholder="enter your email" required>
                     </label>
                     <br>
             </div>
             <div>
                     <label for="password">
-                    Password:
-                    <input type="password" text="hidden" id="password" name="password" placeholder="enter your password">
+                        Password:
+                        <input type="password" id="password" name="password" placeholder="enter your password" required>
                     </label>
                     <br>
             </div>
             <div>
                     <label for="username">
-                    Username:
+                        Username:
+                        <input type="text" id="username" name="username" placeholder="enter your username" required>
                     </label>
-                    <input type="text" id="username" name="username" placeholder="enter your username">
                     <br>
             </div>
             <div>
-                 <button submit="login">enter the matrix</button>
+                    <button submit="login">enter the matrix</button>
             </div>
+        </form>
+
+        <h1>How did you hear about us??</h1>
+            <form>
+                <label for="youtube">
+                    Youtube
+                    <input type="radio" id="youtube" name="source">
+                </label>
+
+                <label for="billboard">
+                    Billboard
+                    <input type="radio" id="billboard" name="source">
+                </label>
+
+                <label for="friend">
+                    Friend
+                    <input type="radio" id="friend" name="source" >
+                </label>
             </form>
-     </body>
+   </body>
 </html>
