@@ -1,0 +1,14 @@
+ul {
+    list-style: none;
+    color: aqua;
+}
+li::before {
+    content: "<><>";
+    color: gold;
+
+}
+
+body {
+    background-color: black;
+    color: white;
+}
