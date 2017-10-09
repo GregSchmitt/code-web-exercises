@@ -1,0 +1,25 @@
+body {
+    background-color: cornflowerblue;
+    color: black;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px solid greenyellow;
+    background-color: slategray;
+    width:10px;
+}
+
+.one-half {
+    background-color: white;
+
+}
+
+.one-third {
+    background-color: white;
+}
+
+.one-fourth {
+    background-color: white;
+}
+

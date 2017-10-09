@@ -1,0 +1,31 @@
+#fu  {
+     color: white;
+     width: 50px;
+     height: 100px;
+    }
+
+.a {
+    background-color:crimson;
+    float: left;
+    border: 1px solid white;
+}
+
+.b {
+    background-color:peru;
+    float: left;
+    border: 1px solid white;
+}
+
+.c {
+    background-color: maroon;
+    float: left;
+    clear: left;
+    border: 1px solid white;
+}
+
+
+.d {
+    background-color:dodgerblue;
+    border: 1px solid white;
+    float: left;
+}

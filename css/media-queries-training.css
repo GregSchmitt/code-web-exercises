@@ -1,0 +1,37 @@
+img {
+    width: 100%;
+}
+
+body {
+    color: black;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    font-weight: bold;
+    list-style-type: none;
+    padding: 2px 0px;
+}
+/*------^^^^^DEFAULT^^^^^------*/
+
+@media screen and (min-width: 400px) {
+    body {
+        background-color: lawngreen;
+    }
+}
+
+@media screen and (min-width: 401px) {
+    body {
+        background-color: red;
+    }
+}
+
+@media screen and (min-width: 402px) {
+    body {
+        background-color: blue;
+    }
+}
