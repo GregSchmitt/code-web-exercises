@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercises</title>
+</head>
+<body>
+
+<h1 class="codeup">jQuery Demo</h1>
+<h2 class="code">random h2....</h2>
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A doloremque id laborum magni nostrum quia quo? Fugit, quis, soluta? Distinctio est id laudantium obcaecati optio quo recusandae sed sint unde!</p>
+
+<div id="ze-div">
+<ul>
+    <h3>Some good movies</h3>
+    <li class="codeup">The Matrix</li>
+    <li class="codeup">Point Break</li>
+    <li class="codeup">Fight Club</li>
+</ul>
+</div>
+
+
+
+
+
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+    });
+
+
+
+//Class Selectors exercise====================>
+//
+//    //1.
+//    $('li').css('border', '1px solid black');
+//    $('li').css('background', 'grey');
+//
+//    //2.===================
+//    var element = $('h1, #id');
+//    alert(element);
+////or-->
+//    var element2 = $('div, #id, .ze-div');
+//    alert(element2);
+////or-->
+//    var contents = $('paragraph').html();
+//    alert(contents);
+
+
+//    //3.===================
+//
+//
+//    //4.===================
+
+
+
+//Class Selectors exercise====================>
+
+//    //1.===================
+//        $('.codeup').css('border', '2px outset red');
+//        $('li').first().css({
+//            'background': 'gold',
+//            'border': '2px solid black'
+//            });
+//        $('ul, li').css('font-size', '20px');
+//
+//    //2.===================
+//
+//        var statement = $('.code').css('')
+//
+
+
+    //================================================================================================================
+
+    //click============================
+//    function handleParagraphClick() {
+//        var style = $('')
+//    }
+//
+//
+//
+//        $('p').click(handleParagraphClick);
+//        alert('you clicked the p');
+//
+//
+//        $('h2').click(function() {
+//            alert('You double clicked an h2')
+//        })
+//
+
+
+//    //hover============================
+//    function startHover() {
+//        alert('you stopped hovering')
+//
+//    }
+//
+//
+//
+//
+//    function stopHover() {
+//        alert('you stopped hovering')
+//    }
+//
+//    $('h1').hover(startHover, stopHover);
+
+
+
+//mouse events jquery exercise ========================================================
+//
+//    function onParagraphClick() {
+//        this.style.backgroundColor = 'gold';
+//    }
+//
+//    $('h1').click(onParagraphClick);
+//
+//
+//
+//
+//
+//
+//
+//    function increaseParaSize() {
+//        this.style.text = '18px';
+//    }
+//
+//    $('p').dblclick(increaseParaSize());
+//
+//
+
+//------------------>
+
+
+//    $('p').dblclick(function() {
+//                var theElementThatWasClicked = this;
+//                theElementThatWasClicked.style.backgroundColor = 'yellow';
+//            });
+//
+    //----------->
+
+
+            function startHover() {
+                this.style.font ='red';
+            }
+
+            function stopHover() {
+                this.style.font ='black';
+            }
+
+            $('li').hover(startHover, stopHover)
+
+//Click events walk through===>
+    // ###################
+    // # Exercise Review #
+    // ###################
+
+    // Add jQuery code that will change the background color of a h1 element
+    // when clicked.
+
+    // when an h1 is clicked
+    $('h1').click(function() {
+        // change the background color
+        $('h1').css('background-color', 'firebrick');
+    })
+
+    // Make all paragraphs have a font size of 18px when they are double
+    // clicked.
+
+    // when a paragraph is double clicked
+//    $('p').dblclick(function() {
+//        // change the font size to 18px
+//        // this.style.fontSize = '28px';
+//        // this.css('font-size', '28px'); // DONT DO THIS
+//        $(this).css('font-size', '28px');
+//    })
+
+
+    $('li').css('font-size', '40px');
+    $()
+
+    // Set all li text color to red when the mouse is hovering, reset to black
+    // when it is not.
+
+    // when I hover over an li
+    // change the font color to red
+    // when I stop hovering
+    // change the font color to black
+    $('li').hover(function() {
+        $(this).css('color', '#f00');
+    }, function() {
+        $(this).css('color', 'black');
+    })
+
+
+
+
+
+
+//    //--------------------------------------
+//    //1.
+//    $('h1').click(function() {
+//        $('h1').css('background-color, firebrick');
+//    });
+//
+//
+//    //--------------------------------------
+//    //2.
+//    $('p').dblclick(function() {
+//        this.style.fontSize = '28px';
+//    //or-->
+//        $(this).css('font-size', '28px');
+//    });
+//
+//
+//    //--------------------------------------
+//    //3.
+//    $('li').hover(function() {
+//        $(this).css('color', '#f00');
+//    }, function() {
+//        $(this).css('color', 'black');
+//    });
+//
+//
+
+
+
+
+
+
+
+//JQUERY NOTES=============================================================================
+//
+//
+//        // ##################################################
+//        // Adding an event listener to a single element with an id
+//            function onParagraphClick() {
+//                this.style.backgroundColor = 'yellow';
+//            }
+//
+//
+//        //Vanilla JS--->
+//        // var paragraph = document.getElementById('codeup');
+//        // paragraph.addEventListener('click', onParagraphClick);
+//        // // add an event listener with jquery
+//        // $('#codeup').click(onParagraphClick);
+//
+//
+//        // ##################################################
+//        // add an event listener to multiple elements
+//
+//        function handleParagraphClick(e) {
+//            var theElementThatWasClicked = this;
+//            theElementThatWasClicked.style.backgroundColor = 'yellow';
+//        }
+//
+//        // // Vanilla JS
+//        // var paragraphs = document.getElementsByTagName('p');
+//        // for (var i = 0; i < paragraphs.length; i++) {
+//        //     paragraphs[i].addEventListener('click', handleParagraphClick);
+//        // }
+//
+//        // jquery
+//        $('p').click(handleParagraphClick);
+//
+//        // ##################################################
+//
+//        $('h2').dblclick(function() {
+//            alert('You double clicked an h2!');
+//            var theElementThatWasClicked = this;
+//            theElementThatWasClicked.style.backgroundColor = 'yellow';
+//        })
+//
+//        // ##################################################
+//        // hover
+//
+//        // two callback functions, begin hovering, when we stop hovering
+//
+//        function startHover() {
+//            alert('you started hovering')
+//        }
+//
+//        function stopHover() {
+//            alert('you stopped hovering')
+//        }
+//
+//        $('h1').hover(startHover, stopHover);
+//
+//        // Summary
+//        // $(selector).click(eventHandlerFunction)
+//
+
+
+
+</script>
+</body>
+</html>

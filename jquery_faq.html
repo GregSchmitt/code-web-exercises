@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!--<style>-->
+    <!--.invisible {-->
+        <!--display: none;-->
+    <!--}-->
+<!--</style>-->
+
+<body>
+<h1 id="toggle">National Park Facts</h1>
+<dl>
+    <dt>Yellowstone National Park</dt>
+    <dd class="invisible">- black hot drink</dd>
+    <br>
+    <dt>Yosemite</dt>
+    <dd class="invisible">- white cold drink</dd>
+    <br>
+    <dt>Grand Canyon</dt>
+    <dd class="invisible">- black hot drink</dd>
+    <br>
+    <dt>Acadia National Park</dt>
+    <dd class="invisible">- white cold drink</dd>
+    <br>
+    <dt>Zion National Park</dt>
+    <dd class="invisible">- black hot drink</dd>
+    <br>
+    <dt>Arches National Park</dt>
+    <dd class="invisible">- white cold drink</dd>
+    <br>
+    <dt>Glacier National Park</dt>
+    <dd class="invisible">- black hot drink</dd>
+    <br>
+    <dt>Sequoia National Park</dt>
+    <dd class="invisible">- white cold drink</dd>
+    <br>
+    <dt>Everglades National Park</dt>
+    <dd class="invisible">- black hot drink</dd>
+    <br>
+    <dt>Olympic National Park</dt>
+    <dd class="invisible">- white cold drink</dd>
+</dl>
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+    "use strict";
+
+
+//code review-->
+
+//       $('#toggle').click(function(e) {
+//            $('dd').toggleClass('invisible');
+//        })
+     //or-->
+        $('#toggle').click(function(e) {
+            e.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+
+
+//makes dt's yellow-->
+        $('dt').click(function(e) {
+            $(e.target).css('background-color', 'yellow');
+        });
+
+        $('dd').click(function(e) {
+            $(e.target).css('border', '2px dashed red');
+        });
+
+        $('h1').click(function(e) {
+            $(e.target).css('color', 'grey');
+        });
+
+
+    //$('class').css('display', 'none');
+    //$('dt').click()
+
+
+
+
+
+    });
+</script>
+</body>
+</html>

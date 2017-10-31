@@ -6,6 +6,11 @@
 </head>
 <body>
 
+    <button id="btn1">Change Header</button>
+    <button id="btn2">Change SubHeader</button>
+    <button id="btn3">Change list</button>
+    <button id="btn4">Change Paragraph</button>
+
 <h1 id="main-header">Hello World!</h1>
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -25,119 +30,86 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
 <script>
     (function() {
         "use strict";
-
-        // TODO: Uncomment next line and get the main header element by id
-            var mainHeader = document.getElementById("main-header");
-
-
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-            mainHeader.innerHTML = "JavaScript is Cool";
-
-        // TODO: Uncomment the next line and get the sub header element by id
-            var subHeader = document.getElementById("sub-header");
+//
+//
 
 
-        // TODO: Set the text color of subHeader to blue
-            subHeader.style.color = "blue";
 
-        // TODO: Uncomment the next line and get all list items
-            var listItems = document.getElementsByTagName("li");
 
-        // TODO: Set text color on every other list item to grey
-            var listItems = document.getElementsByTagName("li");
 
-            for(var i = 0; i < listItems.length; i += 2) {
-                listItems[i].style.color = "grey";
-            }
-        // TODO: Set text color of li with dbid = 1 to blue
-            if (listItems[i].getAttribute("data-dbid") == 1) {
-                    listItems[i].style.color = "blue";
-            }
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-            var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].addEventListener('click', function() {
-                subParagraphs[0].innerText = "Mission Accomplished!";
-            });
+
+
+
+
+
+
+
+
+
+//        // TODO: Uncomment next line and get the main header element by id
+//            var mainHeader = document.getElementById("main-header");
+//
+//
+//        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+//
+//            //mainHeader.innerHTML = "JavaScript is Cool";
+//
+//        // TODO: Uncomment the next line and get the sub header element by id
+//            var subHeader = document.getElementById("sub-header");
+//
+//
+//        // TODO: Set the text color of subHeader to blue
+//            subHeader.style.color = "blue";
+//
+//        // TODO: Uncomment the next line and get all list items
+//            var listItems = document.getElementsByTagName("li");
+//
+//        // TODO: Set text color on every other list item to grey
+//            var listItems = document.getElementsByTagName("li");
+//
+//            for(var i = 0; i < listItems.length; i += 2) {
+//                listItems[i].style.color = "grey";
+//            }
+//        // TODO: Set text color of li with dbid = 1 to blue
+//            if (listItems[i].getAttribute("data-dbid") == 1) {
+//                    listItems[i].style.color = "blue";
+//            }
+//
+//        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+//            var subParagraphs = document.getElementsByClassName("sub-paragraph");
+//
+//        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+//            subParagraphs[0].addEventListener('click', function() {
+//                subParagraphs[0].innerText = "Mission Accomplished!";
+//            });
+
+
+
+//=====================================SECOND_EXERCISE========================================>
+
+
+//        var btn1 = document.getElementById("testBtn");
+//
+//        btn1.addEventListener("click", function() {
+//            mainHeader.innerHTML = "JavaScript is Cool";
+//        });
+//
+
+
+//walk_through
+//
+//
+
     })();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-<!--
-
-var username = document.getElementById("username");
-        var password = document.getElementById('password');
-
-        document.getElementById('login').addEventListener('click', function(event) {
-            event.preventDefault();
-            console.log("username is " + username.value);
-            console.log("password is " + password.value);
-        });
-
-
-        // Iterating through a list
-        var listItems = document.getElementsByTagName("li");
-
-        for(var i = 0; i < listItems.length; i++) {
-            console.log(listItems[i].innerText);
-        }
-
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--===============================Dom notes================================
-
-
-var passwordInput = document.getElementById("login").addEventListener("click",function() {
-    console.log("username is " + username.value);
-    console.log("password is " + password.value);
-});
-
-
-
 
 
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Map Api</title>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+<!--div to hold map-->
+<div id="map-canvas"></div>
+
+<!--Load the Google Maps API [DON'T FORGET TO USE A KEY]-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABqkokIR3PxR6PWyrE6RXSzMhtYaiQCw4"></script>
+
+<!--Script to show address on map-->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+// The map "object" with map options like zoom, center, location etc
+        var mapOptions = {
+            zoom: 25,
+            center: {
+                lat:  29.448210,
+                lng: -100.993505
+            }
+        };
+
+// Render the map
+        var map = new
+        google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        // Include code from previous example
+            var geocoder = new google.maps.Geocoder();
+
+//==========================================================================================
+
+
+// Set our address to geocode
+        var momsHouse = "1262 Striper Rd, Del Rio, TX, 78840";
+
+        //Set marker-->
+            var marker = new google.maps.Marker({
+                position: {lat: 29.448210, lng:- 100.993505},
+                map: map
+            });
+
+        //Set info box displaying info about location-->
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<h1>Moms House</h1>'
+            });
+
+         //Setting listening to display info box when clicked-->
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+            });
+
+//==========================================================================================
+
+
+// Init geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+
+// Geocode our address
+        geocoder.geocode({ address: momsHouse }, function(results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+            }
+            else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+})();
+</script>
+</body>
+
+
+
+
+
+<!--
+1.Generate a Google Maps API Key using these instructions
+
+2.Create a new file name google_maps_api.html and add the following map.
+
+3.Generate a map that shows the city with your favorite restaurant using geocoding.
+
+4.Redraw the map of the above location at zoom levels 5, 15, and 20.
+
+5.Create a marker on your map of the exact location of your favorite restaurant,
+ and adjust the zoom to allow for best viewing distance.
+
+6.Create an info window with the name of the restaurant.
+
+7.Zoom in and verify that you have identified the correct location.
+ Double check it against Google Maps
+-->
