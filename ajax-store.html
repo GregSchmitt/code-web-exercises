@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts">
+        <tr>
+            <td>Hammer</td>
+            <td>25</td>
+            <td>20</td>
+            <td>tool</td>
+        </tr>
+    </tbody>
+</table>
+<button id="update">Refresh</button>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+
+$(document).ready(function() {
+    "use strict";
+
+
+//1. TODO: Create an ajax GET request for /data/inventory.json
+
+
+    //step1-->
+        var request = $.get("/data/inventory.json");
+
+
+        request.fail(function(jqXhr, status, error) {
+                console.log("There was an error! Check the console for details");
+                console.log("Response status: : " + status);
+                console.log("Error object: " + error);
+
+            });
+
+
+
+//2. TODO: Take the data from inventory.json and append it to the products table
+//       HINT: Your data should come back as a JSON object;
+//       use console.log() to inspect its contents and fields.
+//       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+
+    //step2-->
+        request.done(function(data) {
+                console.log(data);
+            data.forEach(function(tool) {
+                addRowToTable(tool);
+            });
+        });
+
+
+
+    //step3-->
+        function addRowToTable(tool) {
+
+                var htmlString = "";
+
+                htmlString += "<tr>";
+                htmlString += "<td>" + tool.title + "<td>";
+                htmlString += "<td>$" + tool.quantity + "<td>";
+                htmlString += "<td>" + tool.price + "</td>";
+                htmlString += "<td>" + tool.categories + "</td>";
+                htmlString += "<tr>";
+
+                $("#insertProducts").append(htmlString);
+        }
+
+
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--//function addRowToTable(tool) {-->
+<!--// adds a tools data to a row on the table-->
+
+<!--var tool = data[0];-->
+
+
+
+
+
+
+
+
+
+
+<!--//    //    var ajaxRequest = $.ajax("./data/inventory.json");-->
+<!--//    //-->
+<!--//    //    ajaxRequest.done(function (data) {-->
+<!--//    //        console.log(data);-->
+<!--//    //    });-->
+<!--//-->
+<!--//-->
+<!--//            function updatePage() {-->
+<!--//-->
+<!--//                var inventory = [-->
+<!--//                    {-->
+<!--//                        "title": "Hammer",-->
+<!--//                        "quantity": 25,-->
+<!--//                        "categories": [-->
+<!--//                            "tool"-->
+<!--//                        ],-->
+<!--//                        "price": 20-->
+<!--//                    }, {-->
+<!--//                        "title": "Drill",-->
+<!--//                        "quantity": 5,-->
+<!--//                        "categories": [-->
+<!--//                            "tool",-->
+<!--//                            "powered"-->
+<!--//                        ],-->
+<!--//                        "price": 100-->
+<!--//                    }, {-->
+<!--//                        "title": "Mower",-->
+<!--//                        "quantity": 5,-->
+<!--//                        "categories": [-->
+<!--//                            "tool",-->
+<!--//                            "gas",-->
+<!--//                            "outdoor"-->
+<!--//                        ],-->
+<!--//                        "price": 200-->
+<!--//                    }, {-->
+<!--//                        "title": "Screwdrivers",-->
+<!--//                        "quantity": 25,-->
+<!--//                        "categories": [-->
+<!--//                            "tool"-->
+<!--//                        ],-->
+<!--//                        "price": 10-->
+<!--//                    }-->
+<!--//                ];-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//                buildHTML(inventory);-->
+<!--//            }-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//            function buildHTML(tools) {-->
+<!--//                var ordersHTML = tools[0].title;-->
+<!--//-->
+<!--//-->
+<!--//                ordersHTML += "<tr><td>" + tools[0].title + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[0].quantity + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[0].price + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[0].categories[0] + "</td></tr>";-->
+<!--//-->
+<!--//                ordersHTML += "<tr><td>" + tools[1].title + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[1].quantity + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[1].price + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[1].categories[0] + "</td></tr>";-->
+<!--//-->
+<!--//-->
+<!--//                ordersHTML += "<tr><td>" + tools[2].title + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[2].quantity + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[2].price + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[2].categories[0] + "</td></tr>";-->
+<!--//-->
+<!--//-->
+<!--//                ordersHTML += "<tr><td>" + tools[3].title + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[3].quantity + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[3].price + "</td>";-->
+    <!--//                ordersHTML += "<td>" + tools[3].categories[0] + "</td></tr>";-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//                tools.forEach(function(order) {-->
+<!--//                    ordersHTML += "<section>";-->
+    <!--//                    ordersHTML += "<h3>" + "Order #" + order.orderNumber + "</h3>";-->
+    <!--//                    ordersHTML += "<dl>";-->
+        <!--//                    ordersHTML += "<dt>" + "Item Ordered" + "</dt>";-->
+        <!--//                    ordersHTML += "<dd>" + order.itemOrdered + "</dd>";-->
+        <!--//                    ordersHTML += "<dt>" + "Ordered by" + "</dt>";-->
+        <!--//                    ordersHTML += "<dd>" + order.orderedBy + "</dd>";-->
+        <!--//                    ordersHTML += "</dl>";-->
+    <!--//                    ordersHTML += "</section>";-->
+<!--//                });-->
+<!--//-->
+<!--//                $('#insertProducts').html(ordersHTML);-->
+<!--//            }-->
+<!--//-->
+<!--//    		$('#update').click(updatePage);-->
+<!--//-->
+
+
+
+
+
+<!--Exercise Solution=======================================-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+    <!--<title>Online Store</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>My Tool Store</h1>-->
+
+<!--<table id="products">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th>Title</th>-->
+        <!--<th>Quantity</th>-->
+        <!--<th>Price</th>-->
+        <!--<th>Categories</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody id="insertProducts"></tbody>-->
+<!--</table>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+
+<!--<script>-->
+<!--(function() {-->
+        <!--"use strict";-->
+
+
+
+
+<!--// TODO: Create an ajax GET request for /data/inventory.json-->
+
+
+    <!--var request = $.get("data/inventory.json");-->
+        <!--request.fail(function(jqXhr, status, error) {-->
+            <!--console.log("There was an error! Check the console for details");-->
+            <!--console.log("Response status: " + status);-->
+            <!--console.log("Error object: " + error);-->
+        <!--});-->
+
+
+
+    <!--request.done(function(data) {-->
+            <!--console.log(data);-->
+            <!--data.forEach(function(tool) {-->
+                <!--addRowToTable(tool);-->
+            <!--});-->
+        <!--});-->
+
+
+
+        <!--function addRowToTable(tool) {-->
+            <!--var htmlString = "";-->
+
+            <!--htmlString += "<tr>";-->
+            <!--htmlString += "<td>" + tool.title + "</td>";-->
+            <!--htmlString += "<td>" + tool.quantity + "</td>";-->
+            <!--htmlString += "<td>$" + tool.price + "</td>";-->
+            <!--htmlString += "<td>" + tool.categories + "</td>";-->
+            <!--htmlString += "</tr>";-->
+            <!--$("#insertProducts").append(htmlString);-->
+        <!--}-->
+    <!--})();-->
+
+
+
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

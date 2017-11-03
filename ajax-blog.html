@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Blog Exercise</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 id="center-text">Ajax Blog Exercise </h1>
+<div id="posts">
+
+</div>
+
+
+
+
+
+
+
+<button id="update">update</button>
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+
+//master function with ajax request stored in variable-->
+        function updateBlog() {
+            var ajaxRequest = $.ajax("data/blog.json");
+
+        //.done-->
+            ajaxRequest.done(function (data) {
+                buildPostsHTML(data);
+                console.log("its working :" + data);
+            });
+
+        //.fail-->
+            ajaxRequest.fail(function (jqXhr, status, error) {
+                console.log("request status: " + jqXhr);
+                console.log("status: " + status);
+                console.log("error: " + error);
+            });
+        }
+
+
+
+
+// Final function to take in html and forEach loop to iterate threw it-->
+        function buildPostsHTML(blogPosts) {
+            var blogPostsHTML = "";
+
+            blogPosts.forEach(function (blogPost) {
+                blogPostsHTML += "<h2>" + blogPost.title + "</h2>";
+                blogPostsHTML += "<p>" + blogPost.content + "</p>";
+                blogPostsHTML += "<p>" + "Categories: " + blogPost.categories.join(", ") + "</p>";
+                blogPostsHTML += "<p>" + "Posted on: " + blogPost.date + "</p>";
+
+            });
+            $("#posts").html(blogPostsHTML);
+
+        }
+        $("#update").click(updateBlog);
+
+
+});
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--//Declare variable with a store request-->
+
+
+<!--var request = $.ajax("./data/blog.json");-->
+
+<!--//.fail-->
+<!--request.fail(function(jqXhr, status, error) {-->
+<!--console.log("request failed");-->
+<!--console.log("response status: " + status);-->
+<!--console.log("error object: " + error);-->
+<!--});-->
+
+<!--//.done-->
+<!--request.done(function(data) {-->
+<!--console.log("request was successful!: " + data);-->
+<!--});-->
+
+
+
+
+<!--//============================================>-->
+
+<!--//        [-->
+<!--//            {-->
+<!--//                "title": "My First Blog Post",-->
+<!--//                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",-->
+<!--//                "categories": [-->
+<!--//                    "greek"-->
+<!--//                ],-->
+<!--//                "date": "January 25, 2015"-->
+<!--//            }, {-->
+<!--//            "title": "The Second Post",-->
+<!--//            "content": "Cupcake ipsum dolor sit amet gummies. Cake chocolate sweet ice cream oat cake biscuit bear claw dessert. Jujubes marzipan toffee apple pie pastry dragée jujubes marshmallow. Dragée chocolate gingerbread liquorice chocolate bar jujubes. Sweet chocolate bar jelly-o chocolate cake candy carrot cake cotton candy macaroon marzipan. Sweet roll biscuit sweet gummies topping sesame snaps tootsie roll sugar plum pie. Sweet muffin croissant chocolate cake chupa chups. Donut croissant gummies donut powder ice cream. Chupa chups halvah apple pie topping jelly beans donut candy canes donut. Bonbon cake gummi bears cheesecake tart topping powder liquorice gummi bears.",-->
+<!--//            "categories": [-->
+<!--//                "family",-->
+<!--//                "candy",-->
+<!--//                "sweets",-->
+<!--//                "sugar"-->
+<!--//            ],-->
+<!--//            "date": "February 14, 2015"-->
+<!--//        }-->
+<!--//        ]-->
+
+
+
+
+<!--//      Use ajax to load the contents of blog.json and add the data from it to your #posts div.-->
+<!--//      Add additional entries to blog.json and make sure your changes are reflected on the page.-->
+
+
+
+<!--//Make html wrapped in a function to provide extra parameters for the .done method-->
+
+
+
+<!--var htmlString = "";-->
+
+<!--htmlString += ""-->
+
+
+
+
+
+
+
+
+
+
+<!--JUSTIN WALKTHROUGH-->
+
+<!--function loadPosts() {-->
+<!--$.get("./data/blog.json").done(function(data) {-->
+<!--buildPostsHTML(data);-->
+<!--}).fail(function() {-->
+<!--console.log("Failed request");-->
+<!--});-->
+<!--}-->
+<!--function buildPostsHTML(posts) {-->
+<!--var outputString = "";-->
+<!--//                function buildListHTML(list) {-->
+<!--//                    var outputHTML = "";-->
+<!--//                    list.forEach(function(item) {-->
+<!--//                        outputHTML += "<li>" + item + "</li>";-->
+<!--//-->
+<!--//                    });-->
+<!--//                    return outputHTML;-->
+<!--//                }-->
+<!--posts.forEach(function(post) {-->
+<!--outputString += "<div class='well'>";-->
+    <!--outputString += "<h6>" + post.date + "</h6>";-->
+    <!--outputString += "<h3>" + post.title + "</h3>";-->
+    <!--outputString += "<p>" + post.content + "</p>";-->
+    <!--outputString += "<ul><li>" + post.categories.join("</li><li>") + "</li></ul>";-->
+    <!--outputString += "</div>";-->
+<!--});-->
+<!--$('#posts').html(outputString);-->
+<!--}-->
+<!--loadPosts();-->
+<!--$("#reloadBtn").click(loadPosts);-->
+<!--});-->
+<!--</script>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--<script src="./js/jquery-2.2.4.js"></script>-->
+<!--<script>-->
+    <!--$(document).ready(function() {-->
+        <!--"use strict";-->
+        <!---->
+    <!--});-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

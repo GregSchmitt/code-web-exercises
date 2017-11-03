@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .well {
+            background: lightskyblue;
+        }
+
+        .col-md-4 {
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="well">
+        <h1>Weather Application</h1>
+        <h2>San Antonio</h2>
+
+        <div class='row'>
+           <div class="col-md-4"></div>
+           <div class="col-md-4"></div>
+           <div class="col-md-4"></div>
+        </div>
+    </div>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+        function updateMap() {
+            var request = $.get("http://api.openweathermap.org/data/2.5/weather", {
+
+                APPID: "a2e7abb0aae15abda67c4ca51aacf69c",
+                q:     "San Antonio, TX"
+            }).fail(function(jqXhr, status, error) {
+                console.log();
+                console.log();
+                console.log();
+            }).done(function(data) {
+                console.log(data);
+                co
+            })
+
+        }
+
+
+
+
+
+
+
+});
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
